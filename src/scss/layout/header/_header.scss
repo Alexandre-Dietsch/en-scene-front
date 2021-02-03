@@ -1,1 +1,12 @@
-//header scss
+.header-container {
+  min-height: 8vh;
+
+  @include flex-row(flex-start);
+
+  h1 {
+    margin-left: 2rem;
+
+    font-size: $logo;
+    font-family: "Sansita", sans-serif;
+  }
+}

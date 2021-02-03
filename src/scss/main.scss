@@ -8,6 +8,9 @@
 @import "./base/base";
 @import "./base/fonts";
 
+//Module import
+@import "./modules/button";
+
 //Layout import
 @import "./layout/header/header";
 @import "./layout/home/home";
