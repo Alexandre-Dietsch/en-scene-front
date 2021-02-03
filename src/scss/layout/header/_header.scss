@@ -1,12 +1,12 @@
 .header-container {
+  min-height: 8vh;
+
   @include flex-row(flex-start);
 
-  margin: 1rem;
-
   h1 {
-    padding: 1rem;
+    margin-left: 2rem;
 
-    font-size: $large;
+    font-size: $logo;
     font-family: "Sansita", sans-serif;
   }
 }

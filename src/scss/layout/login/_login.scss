@@ -1,4 +1,91 @@
 .login-container {
-  img {
+  width: 100vw;
+  min-height: 90vh;
+
+  @include flex-column(flex-start);
+  position: relative;
+
+  overflow: hidden;
+
+  @include breakpoint(tablet) {
+    max-width: 80vw;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .login-content {
+    .login-background {
+      min-width: 50vh;
+      min-height: 80vh;
+
+      position: absolute;
+      top: 45%;
+      left: 80%;
+      transform: translate(-50%, -50%);
+
+      border-radius: 40%;
+      background: $oval-form;
+    }
+
+    .login-picture-theater {
+      position: absolute;
+      right: 4rem;
+      top: 1rem;
+    }
+
+    .login-picture-woman-listening-music {
+      position: absolute;
+      left: -2rem;
+      top: 6rem;
+    }
+
+    .login-picture-man-listening-music {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    .login-picture-woman-theater {
+      position: absolute;
+      top: 36rem;
+      right: 2rem;
+
+      @include breakpoint(tablet) {
+        display: none;
+      }
+    }
+
+    .login-picture-magician {
+      position: absolute;
+      bottom: 18rem;
+      left: 0rem;
+    }
+
+    .login-picture-woman-painting {
+      position: absolute;
+      bottom: 12rem;
+      right: 2rem;
+    }
+
+    .login-button {
+      @include button;
+
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    span {
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      font-size: $small;
+      text-align: center;
+    }
   }
 }
