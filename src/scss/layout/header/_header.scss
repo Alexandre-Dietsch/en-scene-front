@@ -1,1 +1,12 @@
-//header scss
+.header-container {
+  @include flex-row(flex-start);
+
+  margin: 1rem;
+
+  h1 {
+    padding: 1rem;
+
+    font-size: $large;
+    font-family: "Sansita", sans-serif;
+  }
+}
