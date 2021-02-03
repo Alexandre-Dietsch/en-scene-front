@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function Header() {
   return(
-    <span>React architecture : header</span>
+    <h1>En scène</h1>
   );
 }
