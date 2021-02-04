@@ -86,6 +86,13 @@
 
       font-size: $small;
       text-align: center;
+
+      button {
+        border: none;
+        background: none;
+        font-weight: bold;
+        cursor: pointer;
+      }
     }
   }
 }
