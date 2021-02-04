@@ -13,17 +13,17 @@ export default function AccessUser() {
       <div className="access-form">
         <form>
           <div className="access-login-pseudo">
-            <label>Pseudo</label>
-            <i class="fas fa-user" />
+            <label htmlFor='pseudo'>Pseudo</label>
             <input
             type='text' 
+            id='pseudo'
             />
           </div>
           <div className="access-login-password">
-            <label>Mot de passe</label>
-            <i class="fas fa-lock" />
+            <label htmlFor='password'>Mot de passe</label>
             <input
             type='password'
+            id='password'
             />
           </div>
           <div className="access-login-button">
@@ -35,7 +35,8 @@ export default function AccessUser() {
         <button
         type='button'
         onClick={() => history.push('/access-register')}
-        >Pas de compte ? C'est ici.</button>
+        >Pas de compte ? <strong>C'est ici</strong>
+        </button>
       </div>
     </div>
   );

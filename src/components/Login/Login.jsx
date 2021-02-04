@@ -8,7 +8,7 @@ export default function Login() {
   return(
     <div className='login-container'>
       <div className="login-content">
-        <div className="login-background" />
+        <span className="login-background" />
         <ListOfPictures />
         <button type='button' className='login-button' onClick={() => history.push('/access-login') }>
           Se connecter

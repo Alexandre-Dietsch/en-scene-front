@@ -30,7 +30,6 @@ const loginPicture = [
     image: womanPainting,
     cName: 'login-picture-woman-painting',
   }
-
 ]
 
 export default loginPicture;
