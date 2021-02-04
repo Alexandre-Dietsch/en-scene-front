@@ -5,7 +5,7 @@ export default function MobileMenu() {
   return(
     <div className="mobile-menu-container">
       <div className="mobile-menu-left">
-        <Link to='/' >
+        <Link to='/'>
           <i className="fas fa-home" />
         </Link>
         <i className="fas fa-search" />

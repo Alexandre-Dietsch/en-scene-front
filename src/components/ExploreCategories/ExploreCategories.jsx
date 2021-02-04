@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import MobileMenu from '../Menu/MobileMenu';
 
 export default function ExploreCategories() {
   const [categories, setCategories] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     const getAllCategories = async () => {
@@ -28,10 +30,10 @@ export default function ExploreCategories() {
         {
           categories && 
           categories.map(category => (
-            <div className="category-card" key={category.id}>
+            <div className="category-card" key={category.id} onClick={() => history.push(`/categories/${category.id}`)}>
               <img src={category.thematic_image} alt={category.name} />
               <h2>{category.name}</h2>
-            </div>
+              </div>
           ))
         }
       </div>
