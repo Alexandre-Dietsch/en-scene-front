@@ -1,9 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-export default function RegisterUser() {
+export default function Register({ registerHandler, userInfo, setUserInfo }) {
   const history = useHistory();
-  
+
+  const { role, pseudo, email, password, passwordConfirmation } 
+  = userInfo;
+
   return(
     <div className="register-container">
       <div className="register-header">
@@ -11,11 +14,15 @@ export default function RegisterUser() {
         <span>C'est par ici pour créer ton compte</span>
       </div>
       <div className="register-form">
-        <form>
+        <form onSubmit={registerHandler}>
           <div className="register-role">
-            <select>
-              <option>Je suis un spectateur</option>
-              <option>Je suis un artiste</option>
+            <select 
+              value={role} 
+              name='role'
+              onChange={(e) => setUserInfo({ ...userInfo, [e.target.name]: e.target.value})}
+            >
+              <option value='1'>Je suis un spectateur</option>
+              <option value='2'>Je suis un artiste</option>
             </select>
           </div>
           <div className="register-pseudo">
@@ -23,6 +30,9 @@ export default function RegisterUser() {
             <input
             type='text' 
             id='pseudo'
+            name='pseudo'
+            value={pseudo}
+            onChange={(e) => setUserInfo({ ...userInfo, [e.target.name]: e.target.value })}
             />
           </div>
           <div className="register-email">
@@ -30,6 +40,9 @@ export default function RegisterUser() {
             <input
             type='email' 
             id='register-email'
+            name='email'
+            value={email}
+            onChange={(e) => setUserInfo({ ...userInfo, [e.target.name]: e.target.value })}
             />
           </div>
           <div className="register-password">
@@ -37,6 +50,9 @@ export default function RegisterUser() {
             <input
             type='password'
             id='password'
+            name='password'
+            value={password}
+            onChange={(e) => setUserInfo({ ...userInfo, [e.target.name]: e.target.value })}
             />
           </div>
           <div className="register-confirmation-password">
@@ -44,6 +60,9 @@ export default function RegisterUser() {
             <input
             type='password'
             id='confirmation-password'
+            name='passwordConfirmation'
+            value={passwordConfirmation}
+            onChange={(e) => setUserInfo({ ...userInfo, [e.target.name]: e.target.value })}
             />
           </div>
           <div className="register-button">

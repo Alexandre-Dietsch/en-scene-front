@@ -3,21 +3,26 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './scss/main.scss';
 
 import Header from './components/Header/Header';
-import Login from './components/Login/Login';
-import AccessUser from './components/Access/AccessUser';
-import RegisterUser from './components/Access/RegisterUser';
+import Home from './components/Home/Home';
+import LoginContainer from './components/Login/LoginContainer';
+import RegisterContainer from './components/Register/RegisterContainer';
+
+//Context
+import { ProvideAuth } from './contexts/ProvideAuth';
 
 export default function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <Switch>
-          <Route exact path='/' component={Login} />
-          <Route path='/access-login' component={AccessUser} />
-          <Route path='/access-register' component={RegisterUser} />
-        </Switch>
-      </div>
-    </Router>
+    <ProvideAuth>
+      <Router>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/access-login' component={LoginContainer} />
+            <Route path='/access-register' component={RegisterContainer} />
+          </Switch>
+        </div>
+      </Router>
+    </ProvideAuth>
   );
 }

@@ -5,7 +5,7 @@ import womanInATheater from '../../assets/png/womanInATheater.png';
 import magician from '../../assets/png/magician.png';
 import womanPainting from '../../assets/png/womanPainting.png'
 
-const loginPicture = [
+const dataPictures = [
   { id: 1, 
     image: theaterPicture,
     cName: 'login-picture-theater', 
@@ -32,4 +32,4 @@ const loginPicture = [
   }
 ]
 
-export default loginPicture;
+export default dataPictures;

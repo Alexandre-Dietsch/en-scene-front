@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import pictures from './loginPictures';
+import pictures from './dataPictures';
 
-export default function ListOfPictures() {
+export default function HomePictures() {
   return (
     <Fragment>
       {
