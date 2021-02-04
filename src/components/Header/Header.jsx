@@ -5,8 +5,6 @@ import { authContext } from '../../contexts/ProvideAuth';
 export default function Header() {
   const { userConnected } = useContext(authContext);
 
-  console.log(userConnected);
-
   return(
     <div className="header-container">
       <div className="header-title">
