@@ -7,7 +7,8 @@ import Home from './components/Home/Home';
 import LoginContainer from './components/Login/LoginContainer';
 import RegisterContainer from './components/Register/RegisterContainer';
 import ExploreCategories from './components/ExploreCategories/ExploreCategories';
-import ArtistsByCategory from './components/ArtistsByCategory/ArtistsByCategory';
+import ArtistsByCategory from './components/Artists/ArtistsByCategory';
+import ArtistProfil from './components/Artists/ArtistProfil';
 
 //Context
 import { ProvideAuth } from './contexts/ProvideAuth';
@@ -24,6 +25,7 @@ export default function App() {
             <Route path='/access-register' component={RegisterContainer} />
             <Route path='/explore-categories' component={ExploreCategories} />
             <Route path='/categories/:idcategory' component={ArtistsByCategory} />
+            <Route path='/artist/:idartist' component={ArtistProfil} />
           </Switch>
         </div>
       </Router>
