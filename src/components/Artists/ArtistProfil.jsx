@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import MobileMenu from '../Menu/MobileMenu';
 
@@ -25,6 +25,9 @@ export default function ArtistProfil() {
         artistProfil && 
         artistProfil.map(artist => (
           <div className="artist-profil">
+            <Link to='/categories/8'>
+              <i class="fas fa-arrow-left" />
+            </Link>
             <img src={artist.user_picture} alt='' />
             <div className="artist-biography">
               <p>{artist.biography}</p>
