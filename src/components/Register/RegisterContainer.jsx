@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import RegisterUser from './RegisterUser';
+import Register from './Register';
 
-export default function CreationAccount() {
+export default function RegisterContainer() {
   const [userInfo, setUserInfo] = useState({
     role: 1,
     pseudo: '',
     email: '',
     password: '',
     passwordConfirmation: ''
-
-  })
-
-  console.log(userInfo)
+  });
+  const [accountIsCreated, setAccountIsCreated] = useState(false);
 
   const { role, pseudo, email, password, passwordConfirmation } 
   = userInfo;
@@ -27,17 +25,24 @@ export default function CreationAccount() {
       password: password,
       passwordConfirmation: passwordConfirmation,
     })
-    .then(res => console.log(res))
+    .then(res => { 
+      setAccountIsCreated(true)
+      setUserInfo({ 
+        ...userInfo, 
+        role: 1, pseudo: '', email: '', password: '', passwordConfirmation: '' 
+      }) 
+    })
     .catch(error => console.log(error))
   }
 
   return (
     <div className="creation-account-container">
-      <RegisterUser 
+      <Register
       registerHandler={registerHandler} 
       userInfo={userInfo}
       setUserInfo={setUserInfo}
       />
+      { accountIsCreated && <p>Parfait, il ne te reste plus qu'à te connecter</p>}
     </div>
   );
 };

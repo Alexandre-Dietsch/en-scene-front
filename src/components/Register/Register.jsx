@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-export default function RegisterUser({ registerHandler, userInfo, setUserInfo }) {
+export default function Register({ registerHandler, userInfo, setUserInfo }) {
   const history = useHistory();
 
   const { role, pseudo, email, password, passwordConfirmation } 
