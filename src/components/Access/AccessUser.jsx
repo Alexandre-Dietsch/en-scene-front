@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 export default function AccessUser() {  
   const history = useHistory();
-  
+
   return(
     <div className="access-container">
       <div className="access-header">
@@ -12,17 +12,23 @@ export default function AccessUser() {
       </div>
       <div className="access-form">
         <form>
-          <label>Pseudo</label>
-          <i class="fas fa-user" />
-          <input
-          type='text' 
-          />
-          <label>Mot de passe</label>
-          <i class="fas fa-lock" />
-          <input
-          type='password'
-          />
-          <button type='submit'>C'est parti</button>
+          <div className="access-login-pseudo">
+            <label>Pseudo</label>
+            <i class="fas fa-user" />
+            <input
+            type='text' 
+            />
+          </div>
+          <div className="access-login-password">
+            <label>Mot de passe</label>
+            <i class="fas fa-lock" />
+            <input
+            type='password'
+            />
+          </div>
+          <div className="access-login-button">
+            <button type='submit'>C'est parti</button>
+          </div>
         </form>
       </div>
       <div className="access-register-account">

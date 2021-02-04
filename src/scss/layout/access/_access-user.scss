@@ -1,0 +1,61 @@
+.access-container {
+  min-width: 100vw;
+  min-height: 90vw;
+
+  @include flex(column, flex-start, flex-start);
+
+  .access-header {
+    @include flex(column, center, flex-start);
+
+    margin: 2rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+      font-size: $medium;
+    }
+
+    span {
+      font-size: $small;
+    }
+  }
+
+  .access-form {
+    @include flex(column, center, center);
+
+    width: 100%;
+
+    .access-login-pseudo {
+      border-bottom: 1px solid $grey;
+      label {
+        margin-right: 1rem;
+
+        font-size: $small;
+      }
+
+      input {
+        padding-bottom: 1rem;
+
+        font-size: $small;
+        border: none;
+        outline: none;
+      }
+    }
+
+    .access-login-password {
+      border-bottom: 1px solid $grey;
+      label {
+        font-size: $small;
+
+        margin-right: 1rem;
+      }
+
+      input {
+        padding-bottom: 1rem;
+
+        font-size: $small;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
