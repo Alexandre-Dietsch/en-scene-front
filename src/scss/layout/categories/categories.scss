@@ -1,0 +1,57 @@
+.explore-categories-container {
+  max-width: 100vw;
+  height: 100vh;
+
+  @include flex(column, flex-start, center);
+
+  background: $background;
+
+  .explore-categories-header {
+    h1 {
+      margin: 1rem 2rem;
+      transform: translateX(-130px);
+
+      font-family: "Concert One", cursive;
+      color: $pink;
+      font-size: $large;
+    }
+  }
+
+  .explore-categories-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 193px));
+    grid-template-rows: repeat(3, minmax(190px, auto));
+    gap: 2.5rem 2rem;
+
+    margin: 1rem;
+
+    .category-card {
+      @include flex(column, flex-start, center);
+      position: relative;
+
+      border-radius: 100px;
+
+      img {
+        position: absolute;
+
+        object-fit: cover;
+
+        width: 100%;
+        height: 100%;
+
+        border-radius: 10px;
+        background: cover;
+      }
+
+      h2 {
+        position: absolute;
+        bottom: -1.5rem;
+
+        font-family: "Concert One", cursive;
+        color: $grey;
+        font-weight: normal;
+        font-size: $medium;
+      }
+    }
+  }
+}

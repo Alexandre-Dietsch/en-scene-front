@@ -20,7 +20,7 @@ export default function LoginContainer() {
           password: password,
         })
         setUserConnected(res.data)
-        history.push('/');
+        history.push('/explore-categories');
 
       } catch(error) {
         console.log(new Date(), error.message)

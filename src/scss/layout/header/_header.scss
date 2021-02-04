@@ -3,6 +3,9 @@
 
   @include flex-row(flex-start);
 
+  background: $background;
+  border-radius: 0 0 1rem 1rem;
+
   h1 {
     margin-left: 2rem;
 
