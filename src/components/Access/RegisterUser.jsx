@@ -25,6 +25,13 @@ export default function RegisterUser() {
             id='pseudo'
             />
           </div>
+          <div className="register-email">
+            <label htmlFor='register-email'>Email</label>
+            <input
+            type='email' 
+            id='register-email'
+            />
+          </div>
           <div className="register-password">
             <label htmlFor='password'>Mot de passe</label>
             <input
@@ -33,7 +40,7 @@ export default function RegisterUser() {
             />
           </div>
           <div className="register-confirmation-password">
-            <label htmlFor='confirmation-password'>Mot de passe</label>
+            <label htmlFor='confirmation-password'>Confirme ton mot de passe</label>
             <input
             type='password'
             id='confirmation-password'

@@ -13,10 +13,10 @@ export default function AccessUser() {
       <div className="access-form">
         <form>
           <div className="access-login-pseudo">
-            <label htmlFor='pseudo'>Pseudo</label>
+            <label htmlFor='email'>Email</label>
             <input
-            type='text' 
-            id='pseudo'
+            type='email' 
+            id='email'
             />
           </div>
           <div className="access-login-password">
