@@ -2,6 +2,7 @@
   min-height: 8vh;
 
   @include flex-row(flex-start);
+  position: relative;
 
   background: $background;
   border-radius: 0 0 1rem 1rem;
@@ -11,5 +12,22 @@
 
     font-size: $logo;
     font-family: "Sansita", sans-serif;
+  }
+
+  .header-title {
+    flex: 1;
+  }
+
+  .header-profil {
+    @include flex(row, flex-end, center);
+    flex: 1;
+    margin: 1rem;
+
+    img {
+      object-fit: cover;
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+    }
   }
 }

@@ -23,7 +23,7 @@
     grid-template-rows: repeat(3, minmax(190px, auto));
     gap: 2.5rem 2rem;
 
-    margin: 1rem;
+    margin: 3rem;
 
     .category-card {
       @include flex(column, flex-start, center);
