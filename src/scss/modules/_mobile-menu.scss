@@ -1,0 +1,41 @@
+.mobile-menu-container {
+  width: 100vw;
+  height: 8vh;
+
+  @include flex-center;
+
+  position: fixed;
+  bottom: 0;
+
+  background: $white;
+  border-radius: 20px 20px 0px 0px;
+
+  @include breakpoint(laptop) {
+    display: none;
+  }
+
+  .mobile-menu-left,
+  .mobile-menu-rigth {
+    @include flex(row, space-evenly, center);
+    flex: 1;
+
+    i {
+      font-size: 2rem;
+      cursor: pointer;
+      outline: none;
+    }
+  }
+
+  .mobile-menu-add {
+    position: absolute;
+
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 5rem;
+    color: $pink;
+    cursor: pointer;
+    outline: none;
+  }
+}

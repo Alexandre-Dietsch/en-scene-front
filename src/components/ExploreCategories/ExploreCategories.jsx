@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import MobileMenu from '../Menu/MobileMenu';
+
 export default function ExploreCategories() {
   const [categories, setCategories] = useState([]);
 
@@ -33,6 +35,7 @@ export default function ExploreCategories() {
           ))
         }
       </div>
+      <MobileMenu />
     </div>
   );
 } 
