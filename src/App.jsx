@@ -5,7 +5,7 @@ import './scss/main.scss';
 import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import AccessUser from './components/Access/AccessUser';
-import RegisterUser from './components/Access/RegisterUser';
+import CreationAccount from './components/Register/CreationAccount';
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
         <Switch>
           <Route exact path='/' component={Login} />
           <Route path='/access-login' component={AccessUser} />
-          <Route path='/access-register' component={RegisterUser} />
+          <Route path='/access-register' component={CreationAccount} />
         </Switch>
       </div>
     </Router>
