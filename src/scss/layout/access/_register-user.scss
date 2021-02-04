@@ -49,6 +49,7 @@
     }
 
     .register-pseudo,
+    .register-email,
     .register-password,
     .register-confirmation-password {
       @include flex(column, center, flex-start);
@@ -97,7 +98,7 @@
     width: 100%;
 
     position: absolute;
-    top: 75%;
+    bottom: 18%;
     left: 50%;
     transform: translate(-50%, -50%);
 
