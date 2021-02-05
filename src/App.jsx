@@ -10,6 +10,8 @@ import ExploreCategories from './components/ExploreCategories/ExploreCategories'
 import ArtistsByCategory from './components/Artists/ArtistsByCategory';
 import ArtistProfil from './components/Artists/ArtistProfil';
 import ProtectedRoute from './routes/ProtectedRoute';
+import AlbumsContainer from './components/Albums/AlbumsContainer';
+
 
 //Context
 import { ProvideAuth } from './contexts/ProvideAuth';
@@ -30,8 +32,11 @@ export default function App() {
             <ProtectedRoute path='/categories/:idcategory'>
               <ArtistsByCategory />
             </ProtectedRoute>
-            <ProtectedRoute path='/artist/:idartist'>
+            <ProtectedRoute path='/artist/:idartist/'>
               <ArtistProfil />
+            </ProtectedRoute>
+            <ProtectedRoute path='/albums/:idartist'>
+              <AlbumsContainer />
             </ProtectedRoute>
           </Switch>
         </div>

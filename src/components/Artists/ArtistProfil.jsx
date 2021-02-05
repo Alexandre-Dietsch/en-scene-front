@@ -31,7 +31,11 @@ export default function ArtistProfil() {
             <img src={artist.user_picture} alt='' />
             <div className="artist-biography">
               <p>{artist.biography}</p>
-              <span>Découvrir {artist.pseudo}</span>
+              <Link to={`/albums/${artist.id}`}>
+                <span>
+                  Découvrir {artist.pseudo}
+                </span>
+              </Link>
             </div>
           </div>
         ))
