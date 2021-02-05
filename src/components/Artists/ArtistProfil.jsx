@@ -17,21 +17,25 @@ export default function ArtistProfil() {
       }
     }
     fetchArtistProfil();
-  })
+  }, [idartist])
 
   return(
     <div className="artist-container">
       {
         artistProfil && 
         artistProfil.map(artist => (
-          <div className="artist-profil">
+          <div className="artist-profil" key={artist.id}>
             <Link to='/categories/8'>
-              <i class="fas fa-arrow-left" />
+              <i className="fas fa-arrow-left" />
             </Link>
             <img src={artist.user_picture} alt='' />
             <div className="artist-biography">
               <p>{artist.biography}</p>
-              <span>Découvrir {artist.pseudo}</span>
+              <Link to={`/albums/${artist.id}`}>
+                <span>
+                  Découvrir {artist.pseudo}
+                </span>
+              </Link>
             </div>
           </div>
         ))

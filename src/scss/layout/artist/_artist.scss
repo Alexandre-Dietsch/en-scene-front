@@ -5,6 +5,14 @@
   @include flex(column, center, center);
   position: relative;
 
+  @include breakpoint(laptop) {
+    max-width: 50vw;
+    height: 92vh;
+    @include flex(row, center, center);
+
+    margin: 0 auto;
+  }
+
   .artist-profil {
     width: 100%;
     height: 100%;
@@ -58,15 +66,19 @@
         overflow-y: scroll;
       }
 
-      span {
+      a {
         width: 60%;
         height: 20%;
+      }
 
+      span {
         @include flex-center;
+
+        padding: 0.5rem;
 
         background: $pink;
         color: $white;
-        border-radius: 20px;
+        border-radius: 10px;
         font-size: $medium;
       }
     }
