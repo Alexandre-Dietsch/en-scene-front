@@ -7,13 +7,11 @@ export default function ProtectedRoute({ children, ...rest }) {
 
   return (
     <Route
-      {...rest}
+      {...rest }
       render={() => {
-        return userConnected.connected === true ? (
-          children
-        ) : (
-          <Redirect to="/" />
-        );
+        return userConnected.connected === true 
+          ? children 
+          : <Redirect to="/" />
       }}
     />
   );

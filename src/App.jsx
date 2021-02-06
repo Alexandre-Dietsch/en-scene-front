@@ -6,11 +6,11 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import LoginContainer from './components/Login/LoginContainer';
 import RegisterContainer from './components/Register/RegisterContainer';
-import ExploreCategories from './components/ExploreCategories/ExploreCategories';
+import ExploreCategories from './components/Categories/ExploreCategories';
 import ArtistsByCategory from './components/Artists/ArtistsByCategory';
 import ArtistProfil from './components/Artists/ArtistProfil';
 import ProtectedRoute from './routes/ProtectedRoute';
-import AlbumsContainer from './components/Albums/AlbumsContainer';
+import Albums from './components/Albums/Albums';
 
 
 //Context
@@ -36,7 +36,7 @@ export default function App() {
               <ArtistProfil />
             </ProtectedRoute>
             <ProtectedRoute path='/albums/:idartist'>
-              <AlbumsContainer />
+              <Albums />
             </ProtectedRoute>
           </Switch>
         </div>

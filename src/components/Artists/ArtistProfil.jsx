@@ -1,47 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment } from 'react';
+import useFetchData from '../../hooks/useFetchData';
 import { Link, useParams } from 'react-router-dom';
-import axios from 'axios';
 import MobileMenu from '../Menu/MobileMenu';
+import Loader from '../Loader/Loader';
 
 export default function ArtistProfil() {
-  const [artistProfil, setArtistProfil] = useState([]);
   const { idartist } = useParams();
-
-  useEffect(() => {
-    const fetchArtistProfil = async (req, res) => {
-      try {
-        const response = await axios.get(`http://localhost:5000/api/user/${idartist}`);
-        setArtistProfil(response.data);
-      } catch(error) {
-        console.log(error.message)
-      }
-    }
-    fetchArtistProfil();
-  }, [idartist])
+  const url = `http://localhost:5000/api/user/${idartist}`;
+  const [data, loading] = useFetchData(url);
 
   return(
-    <div className="artist-container">
-      {
-        artistProfil && 
-        artistProfil.map(artist => (
-          <div className="artist-profil" key={artist.id}>
-            <Link to='/categories/8'>
-              <i className="fas fa-arrow-left" />
-            </Link>
-            <img src={artist.user_picture} alt='' />
-            <div className="artist-biography">
-              <p>{artist.biography}</p>
-              <Link to={`/albums/${artist.id}`}>
-                <span>
-                  Découvrir {artist.pseudo}
-                </span>
+    <Fragment>
+      { loading && <Loader /> }
+      <div className="artist-container">
+        {
+          data && 
+          data.map(artist => (
+            <div className="artist-profil" key={artist.id}>
+              <Link to='/categories/8'>
+                <i className="fas fa-arrow-left" />
               </Link>
+              <img src={artist.user_picture} alt='' />
+              <div className="artist-biography">
+                <p>{artist.biography}</p>
+                <Link to={`/albums/${artist.id}`}>
+                  <span>
+                    Découvrir {artist.pseudo}
+                  </span>
+                </Link>
+              </div>
             </div>
-          </div>
-        ))
-      }
+          ))
+        }
 
-    <MobileMenu />
-    </div>
+      <MobileMenu />
+      </div>
+    </Fragment>
   );
 };
